@@ -1,0 +1,269 @@
+:root{
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --mainFont: 'Staatliches', cursive;
+}
+
+html{
+    font-size: 62.5%;          /*Snippet*/
+    box-sizing: border-box;  /*Snippet para el padding*/
+    /*scroll-snap-type: y mandatory; */
+}
+
+/*Snippet hace que cuando agreguemos padding no haga crecer más el objeto*/
+*,*:before,*:after{ /*Snippet para el padding*/
+    box-sizing: inherit;
+}
+body{
+    background-color:var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+a{
+    text-decoration: none;
+
+}
+img{
+    width:100%;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1,h2,h3{
+    text-align: center;
+    color: yellow;
+    font-family: var(--mainFont);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem; 
+}
+
+/*Header*/
+.header{
+    display:flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem; 
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--mainFont);
+    font-size: 2.2rem;
+}
+
+/*Navegacion*/
+.navegacion{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;   /*Separacion nueva en vez de margin right*/
+}
+.navegacion__enlace{
+    font-family: var(--mainFont);
+    font-size:3rem;
+    color:white;
+    /*margin-right: 2rem;*/
+}
+/*.navegacion__enlace:last-of-type{  Ultimo del menu
+    margin-right: 0;
+}*/
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color:yellow;
+}
+
+/*Grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:2rem;
+}
+@media(min-width: 768px){
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+
+.producto__img{
+    width: 100%;
+}
+
+.producto__info{
+
+}
+
+.producto__nombre{
+    font-size: 4rem;   
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color:yellow;
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--mainFont);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*Graficos*/
+.grafico{
+    min-height: 30rem;
+    grid-column: 1 / 3;
+    background-repeat: no-repeat;
+    background-size: cover; /*Para que cubra todo el espacio
+    ya que no se repite*/
+}
+.grafico--camisa{
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node{
+    grid-row: 8/9;
+    background-image: url(../img/grafico2.jpg);
+}
+@media(min-width: 768px){
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/*Nosotros*/
+.nosotros__grid{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem; 
+}
+@media(min-width:768px){
+    .nosotros__grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.nosotros__text{
+    font-size: 2.2rem;
+    text-align: justify;
+}
+
+.nosotros__img{
+    grid-row: 1/2;
+    margin: auto 0;
+    background-size: cover;
+    width:100%;
+}
+@media(min-width:768px){
+    .nosotros__img{
+        grid-column: 2/3;
+    }
+}
+
+/*Bloques*/
+.comprar{
+
+}
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;  /*Mismo espacio en todas las direcciones*/
+}
+@media(min-width:768px){
+    .bloques{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+.bloque{
+    text-align: center;
+}
+
+.bloque__imagen{
+    width: 100%;
+}
+
+.bloque__titulo{
+    margin: 0;
+}
+
+@media(min-width: 768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+
+    }
+}
+
+.formulario{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+.formulario__campo{
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid; /*Puedo reemplazar con 
+    border: 1rem solid var(--primarioOscuro)*/
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;  /*Quita la flecha hacia abajo*/
+}
+
+.formulario option{
+    background-color: black;
+}
+
+.formulario__submit{
+    background-color: yellow;
+    border: none;
+    font-size: 2rem;
+    font-family: var(--mainFont);
+    padding: 2rem;
+    transition: background-color .4s ease; /*Decimos que propiedad va a dar transicion, en cuanto tiempo y que transicion*/
+    /*fontsize tmb da transicion*/
+    grid-column: 1/3;
+}
+
+
+.formulario__submit:hover{
+    cursor:pointer;
+    background-color: rgb(201, 201, 6);
+}
+
+
+
